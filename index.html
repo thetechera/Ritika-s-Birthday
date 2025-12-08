@@ -19,7 +19,6 @@
 
 <body>
     <div id="wrapper">
-
         <div class="flag__birthday">
             <img src="./images/1.png" alt="" width="350" class="flag__left">
             <img src="./images/1.png" alt="" width="350" class="flag__right">
@@ -75,7 +74,6 @@
                     </div>
                 </div>
                 <!-- END LOCK POPUP -->
-
             </div>
 
             <div class="right">
@@ -83,17 +81,14 @@
                     <div class="image">
                         <img src="./images/unnamed.png" alt="">
                     </div>
-
                     <div class="name">
                         <i class="fa-solid fa-heart"></i>
                         <span>Dear Pavitra</span>
                         <i class="fa-solid fa-heart"></i>
                     </div>
-
                     <div class="balloon_one">
                         <img width="100px" src="./images/balloon1.png" alt="">
                     </div>
-
                     <div class="balloon_two">
                         <img width="100px" src="./images/balloon2.png" alt="">
                     </div>
@@ -122,7 +117,6 @@
             </div>
         </div>
 
-        <!-- Decorations -->
         <div class="decorate_star star1" style="--t: 15s;"></div>
         <div class="decorate_star star2" style="--t: 15.2s;"></div>
         <div class="decorate_star star3" style="--t: 15.4s;"></div>
@@ -147,63 +141,266 @@
             <img src="./images/smiley_icon.png" alt="" width="100">
         </div>
 
-        <!-- Existing mailbox (kept as it is) -->
+        <!-- EXISTING LOVE LETTER POPUP (kept same) -->
         <div class="boxMail">
             <i class="fa-solid fa-xmark"></i>
-            <div class="boxMail-container"></div>
+            <div class="boxMail-container">
+                <div class="card1">
+                    <div class="userImg">
+                        <img src="images/unnamed.png" alt="">
+                    </div>
+                    <h4 class="username">To: Pavitra 💖<span class="underline"></span></h4>
+                    <h3>Happy Birthday</h3>
+                    <div class="imageCute">
+                        <img src="cute1.png" alt="">
+                    </div>
+                </div>
+                <div class="card2">
+                    <div class="card2-content">
+                        <h3>To You!</h3>
+                        <h2>Happy birthday 🥳🎂🥳 chanda the day you come into my life I was not really much attached to
+                            you but day by day you became close to my heart . And now you are truly my younger sister. I
+                            wish I could remove some of the pain from your life which you are bearing alone. But you're
+                            always welcome 🤗 you can talk anytime you want to talk specially those which you can't say
+                            to others. And this year your all dreams come true . I wish that your
+                            brother could wish you but if couldn't wish on him behalf I am wishing you happy birthday
+                            🎈🎂🎈 sana . Don't be Sad ok be happy 😌
+                        </h2>
+                        <div class="imageCute2">
+                            <img src="cute2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <!-- 🎡 EXPERIENCE OVERLAY: QUIZ → PHOTO → CAKE → FIREWORKS -->
+        <div class="experienceOverlay" id="experienceOverlay">
+            <!-- STEP 1: QUIZ -->
+            <div class="experienceScreen experienceScreen--quiz experienceScreen--active">
+                <div class="experienceCard">
+                    <h2 class="experienceTitle">Quiz Time 💖</h2>
+                    <p class="experienceSubtitle">Solve this to unlock your surprise.</p>
+
+                    <form id="quizForm">
+                        <!-- Q1: text -->
+                        <div class="quizItem">
+                            <label>1. What do you think you mean to me? 🥺</label>
+                            <input type="text" name="q1" placeholder="Your answer..." required>
+                        </div>
+
+                        <!-- Q2: MCQ -->
+                        <div class="quizItem">
+                            <label>2. Which vibe suits you the most?</label>
+                            <div class="quizOptions">
+                                <label><input type="radio" name="q2" value="cute" required> Cute</label>
+                                <label><input type="radio" name="q2" value="crazy"> Crazy</label>
+                                <label><input type="radio" name="q2" value="sweet"> Sweet</label>
+                            </div>
+                        </div>
+
+                        <!-- Q3: text -->
+                        <div class="quizItem">
+                            <label>3. One wish for this year? 🎯</label>
+                            <input type="text" name="q3" placeholder="Type your wish..." required>
+                        </div>
+
+                        <!-- Q4: MCQ -->
+                        <div class="quizItem">
+                            <label>4. Perfect way to celebrate your birthday?</label>
+                            <div class="quizOptions">
+                                <label><input type="radio" name="q4" value="family" required> With family</label>
+                                <label><input type="radio" name="q4" value="friends"> With friends</label>
+                                <label><input type="radio" name="q4" value="me"> With me 😌</label>
+                            </div>
+                        </div>
+
+                        <!-- Q5: text -->
+                        <div class="quizItem">
+                            <label>5. One thing you never want to lose? 💫</label>
+                            <input type="text" name="q5" placeholder="Your answer..." required>
+                        </div>
+
+                        <button type="submit" class="quizSubmit">Submit quiz</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- STEP 2: PHOTO -->
+            <div class="experienceScreen experienceScreen--photo">
+                <div class="experienceCard">
+                    <img src="./images/her-photo.jpg" alt="You" class="experiencePhoto">
+                    <p class="experienceSubtitle">One more surprise for you...</p>
+                    <button id="photoNextBtn" class="quizSubmit">Next</button>
+                </div>
+            </div>
+
+            <!-- STEP 3: CAKE -->
+            <div class="experienceScreen experienceScreen--cake">
+                <div class="experienceCard">
+                    <div class="digitalCake">
+                        <div class="cake-base"></div>
+                        <div class="cake-layer cake-layer--top"></div>
+                        <div class="cake-layer cake-layer--middle"></div>
+                        <div class="cake-layer cake-layer--bottom"></div>
+                        <div class="cake-candles">
+                            <div class="candle">
+                                <div class="flame"></div>
+                            </div>
+                            <div class="candle">
+                                <div class="flame"></div>
+                            </div>
+                            <div class="candle">
+                                <div class="flame"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="blowCandlesBtn" class="quizSubmit">Blow candles 🎂</button>
+                </div>
+            </div>
+
+            <!-- STEP 4: FIREWORKS + MESSAGE -->
+            <div class="experienceScreen experienceScreen--fireworks">
+                <div class="experienceCard experienceCard--transparent">
+                    <div class="fireworksContainer">
+                        <div class="firework f1"></div>
+                        <div class="firework f2"></div>
+                        <div class="firework f3"></div>
+                    </div>
+                    <h2 class="fireworksMessage">Wishing You A Beautiful Year Ahead</h2>
+                    <p class="fireworksSub">Happy Birthday Pavitra 🎉</p>
+                    <button id="unlockSurpriseBtn" class="quizSubmit">Unlock your surprise</button>
+                </div>
+            </div>
+        </div>
+        <!-- END EXPERIENCE OVERLAY -->
 
     </div>
 
 </body>
 
 <script>
-    /* DATE ANIMATION (unchanged) */
+    // ---------------------
+    // DATE TYPING EFFECT
+    // ---------------------
     let datetxt = "20th December";
     let charArrDate = datetxt.split('');
-    let date__of__birth = document.querySelector(".date__of__birth span");
     let currentIndex = 0;
+    let dateSpan = document.querySelector(".date__of__birth span");
 
     setTimeout(function () {
-        timeDatetxt = setInterval(function () {
+        let timeDatetxt = setInterval(function () {
             if (currentIndex < charArrDate.length) {
-                date__of__birth.textContent += charArrDate[currentIndex];
+                dateSpan.textContent += charArrDate[currentIndex];
                 currentIndex++;
             } else {
-                clearInterval(timeDatetxt)
+                // add stars once done
+                let i = document.createElement("i");
+                i.className = "fa-solid fa-star";
+                document.querySelector(".date__of__birth").prepend(i);
+                document.querySelector(".date__of__birth").appendChild(i.cloneNode(true));
+                clearInterval(timeDatetxt);
             }
-        }, 100)
+        }, 100);
     }, 12000);
 
 
-    /* 🔒 LOVE LETTER LOCK POPUP */
-    $("#btn__letter").on("click", function () {
-        document.getElementById("miniLockPopup").style.display = "block";
+    // ---------------------
+    // SMALL LOCK POPUP
+    // ---------------------
+    const btnLetter = document.getElementById("btn__letter");
+    const miniLockPopup = document.getElementById("miniLockPopup");
+    const miniContinue = document.getElementById("miniContinue");
+    const miniExit = document.getElementById("miniExit");
+
+    btnLetter.addEventListener("click", function () {
+        miniLockPopup.style.display = "block";
     });
 
-    document.getElementById("miniExit").onclick = function () {
-        document.getElementById("miniLockPopup").style.display = "none";
-    };
-
-    document.getElementById("miniContinue").onclick = function () {
-        document.getElementById("miniLockPopup").style.display = "none";
-        alert("Quiz coming soon...");
-    };
+    miniExit.addEventListener("click", function () {
+        miniLockPopup.style.display = "none";
+    });
 
 
-    /* MAILBOX CLOSE */
-    let mailBox = document.querySelector('.mail')
-    let boxmail = document.querySelector('.boxMail')
-    var close = document.querySelector('.fa-xmark')
+    // ---------------------
+    // EXPERIENCE FLOW
+    // ---------------------
+    const experienceOverlay = document.getElementById("experienceOverlay");
 
-    mailBox.onclick = function () {
-        mailBox.classList.toggle('active')
-        boxmail.classList.add('active')
+    function setExperienceStep(step) {
+        const screens = document.querySelectorAll(".experienceScreen");
+        screens.forEach(s => s.classList.remove("experienceScreen--active"));
+
+        const active = document.querySelector(".experienceScreen--" + step);
+        if (active) {
+            active.classList.add("experienceScreen--active");
+        }
+
+        // show overlay
+        experienceOverlay.classList.add("experienceOverlay--active");
     }
 
-    close.addEventListener('click', function () {
-        boxmail.classList.remove('active')
-    })
+    // After "Continue" from small popup → open quiz
+    miniContinue.addEventListener("click", function () {
+        miniLockPopup.style.display = "none";
+        setExperienceStep("quiz");
+    });
+
+    // QUIZ SUBMIT
+    const quizForm = document.getElementById("quizForm");
+    quizForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        // you can add validation / scoring here if you want
+        setExperienceStep("photo");
+    });
+
+    // PHOTO NEXT
+    const photoNextBtn = document.getElementById("photoNextBtn");
+    photoNextBtn.addEventListener("click", function () {
+        setExperienceStep("cake");
+    });
+
+    // CAKE → BLOW CANDLES → FIREWORKS
+    const blowCandlesBtn = document.getElementById("blowCandlesBtn");
+    const cakeScreen = document.querySelector(".experienceScreen--cake");
+
+    blowCandlesBtn.addEventListener("click", function () {
+        cakeScreen.classList.add("cake--blown");
+        // little delay then fireworks
+        setTimeout(function () {
+            setExperienceStep("fireworks");
+        }, 1200);
+    });
+
+    // UNLOCK SURPRISE → OPEN ORIGINAL LOVE LETTER POPUP
+    const unlockSurpriseBtn = document.getElementById("unlockSurpriseBtn");
+
+    function openLoveLetter() {
+        const boxmail = document.querySelector(".boxMail");
+        if (boxmail) {
+            boxmail.classList.add("active");
+        }
+    }
+
+    unlockSurpriseBtn.addEventListener("click", function () {
+        experienceOverlay.classList.remove("experienceOverlay--active");
+        openLoveLetter();
+    });
+
+    // ---------------------
+    // BOXMAIL CLOSE (EXISTING)
+    // ---------------------
+    const boxmail = document.querySelector(".boxMail");
+    const closeIcon = document.querySelector(".boxMail .fa-xmark");
+
+    if (closeIcon && boxmail) {
+        closeIcon.addEventListener("click", function () {
+            boxmail.classList.remove("active");
+        });
+    }
+
+    // NOTE: We DISCONNECTED direct .mail click → .boxMail
+    // so love letter only opens after full flow.
 </script>
 
 </html>
