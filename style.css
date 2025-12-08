@@ -1076,19 +1076,4 @@ body {
     justify-content: space-between;
 }
 
-.lockedButtons button {
-    width: 48%;
-    padding: 10px 0;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    font-family: "Poppins", sans-serif;
-    background: #FF7882;
-    color: #fff;
-    transition: 0.3s;
-}
 
-.lockedButtons button:hover {
-    transform: scale(1.05);
-}
