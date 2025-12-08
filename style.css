@@ -1134,4 +1134,59 @@ body {
     transform: scale(1.05);
 }
 
+/* Small popup above Love Letter button */
+.miniLockPopup {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 70px; /* distance ABOVE button */
+    display: none;
+    z-index: 9999;
+}
 
+.miniLockBox {
+    width: 260px;
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    text-align: center;
+    border: 3px solid #FF7882;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    animation: popMini 0.25s ease;
+}
+
+@keyframes popMini {
+    from { transform: scale(0.5); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+}
+
+.miniTitle {
+    font-family: "Dancing Script";
+    font-size: 1.6rem;
+}
+
+.miniMsg {
+    font-family: "Poppins";
+    font-size: 0.9rem;
+    margin: 10px 0 20px 0;
+}
+
+.miniBtns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.miniBtns button {
+    width: 48%;
+    padding: 8px 0;
+    background: #FF7882;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: "Poppins";
+}
+
+.miniBtns button:hover {
+    transform: scale(1.05);
+}
