@@ -797,12 +797,6 @@ body {
 
 }
 
-
-
-
-
-
-
 .boxMail{
     position: fixed;
     background: rgb(0, 0, 0, 0.8);
@@ -918,18 +912,6 @@ body {
     font-family: "Inter", serif;
     color: #fff;
 }
-.boxMail .boxMail-container:hover .card2-content{
-    transform: translate(20px, 20px);
-    box-shadow: -1px -1px 5px rgb(0, 0, 0, 0.4);
-}
-.boxMail .boxMail-container .card2 h3{
-    font-family: 'Dancing Script', cursive;
-    padding: 20px 0px 10px 60px;
-    opacity: 0;
-    visibility: hidden;
-    font-size: 25px;
-    text-shadow: 0 0 8px #FF7882;
-}
 .boxMail .boxMail-container .card2:hover h3{
     animation: texth3 3s forwards;
     animation-delay: 2s;
@@ -1023,118 +1005,54 @@ body {
     color: white;
     z-index: 10000000000000000;
 }
-.lockedPopup {
+
+/* ----------------- New Quiz / Overlay Styles ----------------- */
+
+/* overlay */
+.experienceOverlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.7);
-    display: flex;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    display: none;
     justify-content: center;
     align-items: center;
-    visibility: hidden;
-    opacity: 0;
-    transition: 0.4s;
-    z-index: 999999;
+    z-index: 1000000;
+    transition: background 0.35s ease;
 }
-
-.lockedPopup.active {
-    visibility: visible;
-    opacity: 1;
-}
-
-.lockedBox {
-    background: #fff;
-    width: 320px;
-    padding: 25px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    animation: popIn 0.4s ease;
-}
-
-@keyframes popIn {
-    0% { transform: scale(0.6); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
-}
-
-.lockedTitle {
-    font-family: "Dancing Script", cursive;
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.lockedMsg {
-    font-size: 1rem;
-    font-family: "Poppins", sans-serif;
-    margin-bottom: 20px;
-}
-
-.lockedButtons {
+.experienceOverlay--active {
     display: flex;
-    justify-content: space-between;
 }
-/* Small Popup Above Button */
-.miniLockPopup {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 120px; /* distance above button */
+
+/* each screen box */
+.experienceScreen{
     display: none;
-    z-index: 99999;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
-.miniLockBox {
-    width: 260px;
-    background: #fff;
-    border-radius: 14px;
-    padding: 18px;
+/* center card */
+.experienceCard {
+    background: #fff8e4;
+    border-radius: 20px;
+    padding: 25px;
+    width: 90%;
+    max-width: 480px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    border: 2px solid #FF7882;
-    animation: popMini 0.3s ease;
+    border: 3px solid #DACCBF;
+    animation: fadeIn 0.35s ease;
 }
 
-@keyframes popMini {
-    0% { transform: scale(0.5); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
-}
-
-.miniTitle {
-    font-family: "Dancing Script", cursive;
-    font-size: 1.6rem;
-    margin-bottom: 5px;
-}
-
-.miniMsg {
-    font-family: "Poppins", sans-serif;
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-}
-
-.miniBtns {
-    display: flex;
-    justify-content: space-around;
-}
-
-.miniBtns button {
-    width: 45%;
-    padding: 7px 0;
-    background: #FF7882;
+/* transparent card */
+.experienceCard--transparent {
+    background: transparent;
     border: none;
-    border-radius: 8px;
-    font-family: "Poppins", sans-serif;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
+    box-shadow: none;
 }
 
-.miniBtns button:hover {
-    transform: scale(1.05);
-}
-
-/* Small popup above Love Letter button */
+/* mini popup above button */
 .miniLockPopup {
     position: absolute;
     left: 50%;
@@ -1143,7 +1061,6 @@ body {
     display: none;
     z-index: 9999;
 }
-
 .miniLockBox {
     width: 260px;
     background: #fff;
@@ -1154,126 +1071,78 @@ body {
     box-shadow: 0 4px 10px rgba(0,0,0,0.25);
     animation: popMini 0.25s ease;
 }
-
 @keyframes popMini {
     from { transform: scale(0.5); opacity: 0; }
     to   { transform: scale(1); opacity: 1; }
 }
+.miniTitle { font-family: "Dancing Script", cursive; font-size: 1.6rem; }
+.miniMsg { font-family: "Poppins", sans-serif; font-size: 0.9rem; margin-bottom: 12px; }
+.miniBtns { display:flex; gap:8px; justify-content:center; }
+.miniBtns button { padding:8px 12px; border-radius:8px; border:none; background:var(--color-heart); color:#fff; cursor:pointer; }
 
-.miniTitle {
-    font-family: "Dancing Script", cursive;
-    font-size: 1.6rem;
+/* QUIZ specific */
+.quizContainer { position: relative; width: 100%; height: 100%; }
+.quizBg {
+    position: absolute; inset: 0; background-size: cover; background-position: center;
+    filter: brightness(0.4) blur(3px); transition: opacity 0.4s ease-in-out; z-index: 0;
 }
-
-.miniMsg {
-    font-family: "Poppins", sans-serif;
-    font-size: 0.9rem;
-    margin: 10px 0 20px 0;
-}
-
-.miniBtns {
-    display: flex;
-    justify-content: space-between;
-    gap: 6px;
-}
-
-.miniBtns button {
-    width: 48%;
-    padding: 8px 0;
-    background: #FF7882;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-family: "Poppins", sans-serif;
-    font-size: 0.9rem;
-}
-.miniBtns button:hover {
-    transform: scale(1.05);
-}
-
-/* EXPERIENCE OVERLAY */
-.experienceOverlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.65);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000000;
-}
-.experienceOverlay.experienceOverlay--active {
-    display: flex;
-}
-
-.experienceScreen {
-    display: none;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-}
-.experienceScreen--active {
-    display: flex;
-}
-
-.experienceCard {
-    background: #fff8e4;
+.quizCard {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 85%; max-width: 420px;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 248, 228, 0.98);
     border-radius: 20px;
-    padding: 25px;
-    width: 90%;
-    max-width: 420px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-    text-align: center;
+    padding: 20px;
     border: 3px solid #DACCBF;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    animation: fadeIn 0.4s ease;
+    z-index: 2;
 }
-.experienceCard--transparent {
-    background: transparent;
-    border: none;
-    box-shadow: none;
+.quizTitle { font-family: "Dancing Script", cursive; font-size: 1.8rem; margin-bottom: 15px; text-align:center; }
+.quizOptionsOneByOne label {
+    display:block; background:#fff; border: 2px solid #DACCBF; padding: 8px 12px; margin-bottom:10px; border-radius:12px; cursor:pointer; transition: 0.2s;
+}
+.quizOptionsOneByOne label:hover { transform: scale(1.03); border-color: #FF7882; }
+.quizOptionsOneByOne input { margin-right:8px; }
+
+/* goodbye popup */
+.goodbyePopup { position:absolute; inset:0; display:none; justify-content:center; align-items:center; background: rgba(0,0,0,0.6); z-index: 1000020;}
+.goodbyeBox { background:#fff8e4; padding:25px; border-radius:20px; border:3px solid #DACCBF; text-align:center; width:300px; animation: fadeIn 0.35s; }
+.goodbyeBox button { margin-top:15px; padding:8px 20px; background:#FF7882; border:none; color:#fff; border-radius:12px; cursor:pointer; }
+
+/* PHOTO step styles */
+.experiencePhoto { width: 220px; height: 220px; border-radius:24px; object-fit:cover; border:3px solid #FF7882; margin-bottom: 12px; display:block; }
+
+/* digital cake */
+.digitalCake { position: relative; width: 160px; height: 160px; margin: 0 auto 15px auto; }
+.cake-base { position:absolute; bottom:0; width:100%; height:30px; background:#b56576; border-radius:0 0 20px 20px; }
+.cake-layer { position:absolute; background:#ffcad4; border-radius:20px 20px 0 0; }
+.cake-layer--bottom { bottom:30px; width:100%; height:40px; }
+.cake-layer--middle { bottom:60px; width:80%; left:10%; height:35px; }
+.cake-layer--top { bottom:90px; width:60%; left:20%; height:30px; }
+.cake-candles { position:absolute; bottom:120px; left:50%; transform:translateX(-50%); display:flex; gap:10px; }
+.candle { width:10px; height:30px; background:#ffe5ec; border-radius:4px; position:relative; }
+.candle .flame { position:absolute; top:-10px; left:50%; transform:translateX(-50%); width:10px; height:14px; background: radial-gradient(circle at 30% 30%, #fff, #ffd166); border-radius:50%; animation: flameFlicker 0.6s infinite alternate; }
+@keyframes flameFlicker { 0% { transform: translateX(-50%) scale(1); opacity:1 } 100% { transform: translateX(-50%) scale(0.8); opacity:0.8 } }
+.experienceScreen--cake .experienceCard.cake--blown .flame { display:none; }
+
+/* fireworks */
+.fireworksContainer { position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:0; }
+.firework { position:absolute; width:6px; height:6px; border-radius:50%; box-shadow: 0 0 0 0 #ff9a9e, 0 0 0 0 #fad0c4, 0 0 0 0 #fbc2eb; animation: fireworkBurst 1.6s infinite ease-out; }
+.firework.f1 { top:30%; left:20%; animation-delay:0.1s; }
+.firework.f2 { top:25%; right:18%; animation-delay:0.4s; }
+.firework.f3 { top:40%; left:50%; animation-delay:0.8s; }
+@keyframes fireworkBurst {
+    0% { transform: scale(0.2); opacity:1; box-shadow:0 0 0 0 #ff9a9e,0 0 0 0 #fad0c4,0 0 0 0 #fbc2eb; }
+    70% { transform: scale(1); opacity:1; box-shadow: -20px -20px 0 0 #ff9a9e,20px -20px 0 0 #fad0c4,-20px 20px 0 0 #fbc2eb,20px 20px 0 0 #ff9a9e; }
+    100% { transform: scale(1.1); opacity:0; box-shadow:-30px -30px 0 0 #ff9a9e,30px -30px 0 0 #fad0c4,-30px 30px 0 0 #fbc2eb,30px 30px 0 0 #ff9a9e; }
 }
 
-.experienceTitle {
-    font-family: "Dancing Script", cursive;
-    font-size: 2.1rem;
-    margin-bottom: 8px;
-}
-.experienceSubtitle {
-    font-family: "Poppins", sans-serif;
-    font-size: 0.95rem;
-    margin-bottom: 18px;
-}
+.fireworksMessage { position:relative; z-index:1; font-family:"Dancing Script", cursive; font-size:2.2rem; color:#fff; text-shadow:0 0 6px #ff9a9e; margin-bottom:8px; }
+.fireworksSub { position:relative; z-index:1; font-family:"Poppins", sans-serif; color:#fff; margin-bottom:20px; }
 
-.quizItem {
-    text-align: left;
-    margin-bottom: 15px;
-    font-family: "Poppins", sans-serif;
-}
-.quizItem label {
-    font-size: 0.9rem;
-    display: block;
-    margin-bottom: 6px;
-}
-.quizItem input[type="text"] {
-    width: 100%;
-    padding: 6px 8px;
-    border-radius: 8px;
-    border: 1px solid #DACCBF;
-    outline: none;
-    font-size: 0.9rem;
-}
-.quizOptions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 12px;
-    font-size: 0.85rem;
-}
-.quizOptions label {
-    display: flex;
-    gap: 4px;
-    align-items: center;
-}
-
+/* general button */
 .quizSubmit {
     margin-top: 10px;
     padding: 9px 18px;
@@ -1285,159 +1154,7 @@ body {
     font-size: 0.95rem;
     cursor: pointer;
 }
-.quizSubmit:hover {
-    transform: scale(1.03);
-}
+.quizSubmit:hover { transform: scale(1.03); }
 
-/* PHOTO STEP */
-.experiencePhoto {
-    width: 180px;
-    height: 180px;
-    border-radius: 20px;
-    object-fit: cover;
-    border: 3px solid #FF7882;
-    margin-bottom: 15px;
-}
-
-/* DIGITAL CAKE */
-.digitalCake {
-    position: relative;
-    width: 160px;
-    height: 160px;
-    margin: 0 auto 15px auto;
-}
-.cake-base {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 30px;
-    background: #b56576;
-    border-radius: 0 0 20px 20px;
-}
-.cake-layer {
-    position: absolute;
-    background: #ffcad4;
-    border-radius: 20px 20px 0 0;
-}
-.cake-layer--bottom {
-    bottom: 30px;
-    width: 100%;
-    height: 40px;
-}
-.cake-layer--middle {
-    bottom: 60px;
-    width: 80%;
-    left: 10%;
-    height: 35px;
-}
-.cake-layer--top {
-    bottom: 90px;
-    width: 60%;
-    left: 20%;
-    height: 30px;
-}
-
-.cake-candles {
-    position: absolute;
-    bottom: 120px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-}
-.candle {
-    width: 10px;
-    height: 30px;
-    background: #ffe5ec;
-    border-radius: 4px;
-    position: relative;
-}
-.candle .flame {
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 10px;
-    height: 14px;
-    background: radial-gradient(circle at 30% 30%, #fff, #ffd166);
-    border-radius: 50% 50% 50% 50%;
-    animation: flameFlicker 0.6s infinite alternate;
-}
-
-@keyframes flameFlicker {
-    0% { transform: translateX(-50%) scale(1); opacity: 1; }
-    100% { transform: translateX(-50%) scale(0.8); opacity: 0.8; }
-}
-
-/* When cake is blown */
-.experienceScreen--cake.cake--blown .flame {
-    display: none;
-}
-
-/* FIREWORKS */
-.fireworksContainer {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    pointer-events: none;
-}
-.firework {
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    box-shadow:
-        0 0 0 0 #ff9a9e,
-        0 0 0 0 #fad0c4,
-        0 0 0 0 #fbc2eb;
-    animation: fireworkBurst 1.6s infinite ease-out;
-}
-.firework.f1 { top: 30%; left: 20%; animation-delay: 0.1s; }
-.firework.f2 { top: 25%; right: 18%; animation-delay: 0.4s; }
-.firework.f3 { top: 40%; left: 50%; animation-delay: 0.8s; }
-
-@keyframes fireworkBurst {
-    0% {
-        transform: scale(0.2);
-        opacity: 1;
-        box-shadow:
-            0 0 0 0 #ff9a9e,
-            0 0 0 0 #fad0c4,
-            0 0 0 0 #fbc2eb;
-    }
-    70% {
-        transform: scale(1);
-        opacity: 1;
-        box-shadow:
-            -20px -20px 0 0 #ff9a9e,
-            20px -20px 0 0 #fad0c4,
-            -20px 20px 0 0 #fbc2eb,
-            20px 20px 0 0 #ff9a9e;
-    }
-    100% {
-        transform: scale(1.1);
-        opacity: 0;
-        box-shadow:
-            -30px -30px 0 0 #ff9a9e,
-            30px -30px 0 0 #fad0c4,
-            -30px 30px 0 0 #fbc2eb,
-            30px 30px 0 0 #ff9a9e;
-    }
-}
-
-.fireworksMessage {
-    position: relative;
-    z-index: 1;
-    font-family: "Dancing Script", cursive;
-    font-size: 2.2rem;
-    color: #fff;
-    text-shadow: 0 0 6px #ff9a9e;
-    margin-bottom: 8px;
-}
-.fireworksSub {
-    position: relative;
-    z-index: 1;
-    font-family: "Poppins", sans-serif;
-    color: #fff;
-    margin-bottom: 20px;
-}
+/* fade */
+@keyframes fadeIn { from { opacity: 0; transform: scale(0.92); } to { opacity: 1; transform: scale(1); } }
