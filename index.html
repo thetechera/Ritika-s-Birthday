@@ -2,19 +2,18 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="title" content="Happy Birthday Website 2.0 | Aoudumber Bade">
-    <meta name="github" content="https://github.com/Aoudumber-Bade">
     <title>Ritika's Birthday</title>
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Poppins:wght@400;600&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Poppins:wght@400;600&display=swap"
         rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -62,18 +61,18 @@
                     </button>
                 </div>
 
-                <!-- 🔒 SMALL LOCK POPUP ABOVE BUTTON -->
+                <!-- small lock popup (above button) -->
                 <div class="miniLockPopup" id="miniLockPopup">
                     <div class="miniLockBox">
                         <h3 class="miniTitle">🔒 Locked</h3>
-                        <p class="miniMsg">Want to unlock your love letter.</p>
+                        <p class="miniMsg">Solve a quiz to unlock your love letter.</p>
                         <div class="miniBtns">
                             <button id="miniContinue">Continue</button>
                             <button id="miniExit">Goodbye</button>
                         </div>
                     </div>
                 </div>
-                <!-- END LOCK POPUP -->
+
             </div>
 
             <div class="right">
@@ -141,7 +140,7 @@
             <img src="./images/smiley_icon.png" alt="" width="100">
         </div>
 
-        <!-- EXISTING LOVE LETTER POPUP (kept same) -->
+        <!-- existing full-screen love-letter popup (boxMail) kept intact -->
         <div class="boxMail">
             <i class="fa-solid fa-xmark"></i>
             <div class="boxMail-container">
@@ -158,14 +157,7 @@
                 <div class="card2">
                     <div class="card2-content">
                         <h3>To You!</h3>
-                        <h2>Happy birthday 🥳🎂🥳 chanda the day you come into my life I was not really much attached to
-                            you but day by day you became close to my heart . And now you are truly my younger sister. I
-                            wish I could remove some of the pain from your life which you are bearing alone. But you're
-                            always welcome 🤗 you can talk anytime you want to talk specially those which you can't say
-                            to others. And this year your all dreams come true . I wish that your
-                            brother could wish you but if couldn't wish on him behalf I am wishing you happy birthday
-                            🎈🎂🎈 sana . Don't be Sad ok be happy 😌
-                        </h2>
+                        <h2 id="finalLetterText">Happy birthday 🥳🎂🥳 ...</h2>
                         <div class="imageCute2">
                             <img src="cute2.png" alt="">
                         </div>
@@ -174,68 +166,50 @@
             </div>
         </div>
 
-        <!-- 🎡 EXPERIENCE OVERLAY: QUIZ → PHOTO → CAKE → FIREWORKS -->
+        <!-- EXPERIENCE OVERLAY: PHOTO INTRO -> QUIZ -> PHOTO -> CAKE -> FIREWORKS -->
         <div class="experienceOverlay" id="experienceOverlay">
-            <!-- STEP 1: QUIZ -->
-            <div class="experienceScreen experienceScreen--quiz experienceScreen--active">
-                <div class="experienceCard">
-                    <h2 class="experienceTitle">Quiz Time 💖</h2>
-                    <p class="experienceSubtitle">Solve this to unlock your love letter.</p>
-
-                    <form id="quizForm">
-                        <!-- Q1: text -->
-                        <div class="quizItem">
-                            <label>1. What do you think you mean to me? 🥺</label>
-                            <input type="text" name="q1" placeholder="Your answer..." required>
-                        </div>
-
-                        <!-- Q2: MCQ -->
-                        <div class="quizItem">
-                            <label>2. Which vibe suits you the most?</label>
-                            <div class="quizOptions">
-                                <label><input type="radio" name="q2" value="cute" required> Cute</label>
-                                <label><input type="radio" name="q2" value="crazy"> Crazy</label>
-                                <label><input type="radio" name="q2" value="sweet"> Sweet</label>
-                            </div>
-                        </div>
-
-                        <!-- Q3: text -->
-                        <div class="quizItem">
-                            <label>3. One wish for this year? 🎯</label>
-                            <input type="text" name="q3" placeholder="Type your wish..." required>
-                        </div>
-
-                        <!-- Q4: MCQ -->
-                        <div class="quizItem">
-                            <label>4. Perfect way to celebrate your birthday?</label>
-                            <div class="quizOptions">
-                                <label><input type="radio" name="q4" value="family" required> With family</label>
-                                <label><input type="radio" name="q4" value="friends"> With friends</label>
-                                <label><input type="radio" name="q4" value="me"> With me 😌</label>
-                            </div>
-                        </div>
-
-                        <!-- Q5: text -->
-                        <div class="quizItem">
-                            <label>5. One thing you never want to lose? 💫</label>
-                            <input type="text" name="q5" placeholder="Your answer..." required>
-                        </div>
-
-                        <button type="submit" class="quizSubmit">Submit quiz</button>
-                    </form>
+            <!-- PHOTO INTRO -->
+            <div class="experienceScreen experienceScreen--photoIntro">
+                <div class="experienceCard experienceCard--transparent">
+                    <img src="./images/q1-bg.jpg" alt="intro" class="experiencePhotoIntro" id="introPhoto">
+                    <p class="experienceSubtitle">Tap continue to start your surprise...</p>
+                    <button id="photoIntroNext" class="quizSubmit">Continue</button>
                 </div>
             </div>
 
-            <!-- STEP 2: PHOTO -->
+            <!-- QUIZ (one-by-one) -->
+            <div class="experienceScreen experienceScreen--quiz">
+                <div class="quizContainer">
+                    <div class="quizBg" id="quizBg"></div>
+
+                    <div class="quizCard">
+                        <h2 id="quizQuestion" class="quizTitle"></h2>
+
+                        <div id="quizOptions" class="quizOptionsOneByOne"></div>
+
+                        <button id="quizNextBtn" class="quizSubmit" style="display:none;">Next</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GOODBYE -->
+            <div class="goodbyePopup" id="goodbyePopup">
+                <div class="goodbyeBox">
+                    <p>Looks like you forgot something important 🥺<br>Goodbye!</p>
+                    <button id="goodbyeCloseBtn">Okay</button>
+                </div>
+            </div>
+
+            <!-- ONE MORE PHOTO -->
             <div class="experienceScreen experienceScreen--photo">
                 <div class="experienceCard">
-                    <img src="./images/her-photo.jpg" alt="You" class="experiencePhoto">
+                    <img src="./images/q5-bg.jpg" alt="Photo" class="experiencePhoto" id="surprisePhoto">
                     <p class="experienceSubtitle">One more surprise for you...</p>
                     <button id="photoNextBtn" class="quizSubmit">Next</button>
                 </div>
             </div>
 
-            <!-- STEP 3: CAKE -->
+            <!-- CAKE -->
             <div class="experienceScreen experienceScreen--cake">
                 <div class="experienceCard">
                     <div class="digitalCake">
@@ -243,164 +217,280 @@
                         <div class="cake-layer cake-layer--top"></div>
                         <div class="cake-layer cake-layer--middle"></div>
                         <div class="cake-layer cake-layer--bottom"></div>
+
                         <div class="cake-candles">
-                            <div class="candle">
-                                <div class="flame"></div>
-                            </div>
-                            <div class="candle">
-                                <div class="flame"></div>
-                            </div>
-                            <div class="candle">
-                                <div class="flame"></div>
-                            </div>
+                            <div class="candle"><div class="flame"></div></div>
+                            <div class="candle"><div class="flame"></div></div>
+                            <div class="candle"><div class="flame"></div></div>
                         </div>
                     </div>
                     <button id="blowCandlesBtn" class="quizSubmit">Blow candles 🎂</button>
                 </div>
             </div>
 
-            <!-- STEP 4: FIREWORKS + MESSAGE -->
+            <!-- FIREWORKS -->
             <div class="experienceScreen experienceScreen--fireworks">
                 <div class="experienceCard experienceCard--transparent">
-                    <div class="fireworksContainer">
+                    <div class="fireworksContainer" id="fireworksContainer">
                         <div class="firework f1"></div>
                         <div class="firework f2"></div>
                         <div class="firework f3"></div>
                     </div>
                     <h2 class="fireworksMessage">Wishing You A Beautiful Year Ahead</h2>
                     <p class="fireworksSub">Happy Birthday Pavitra 🎉</p>
-                    <button id="unlockSurpriseBtn" class="quizSubmit">Unlock your surprise</button>
+
+                    <button id="unlockSurpriseBtn" class="quizSubmit">Unlock Your Surprise</button>
                 </div>
             </div>
+
         </div>
         <!-- END EXPERIENCE OVERLAY -->
 
     </div>
 
-</body>
+    <!-- SCRIPTS: all behavior in single block -->
+    <script>
+        /***** Basic typing for date (unchanged) *****/
+        let datetxt = "20th December";
+        let charArrDate = datetxt.split('');
+        let currentIndex = 0;
+        let dateSpan = document.querySelector(".date__of__birth span");
 
-<script>
-    // ---------------------
-    // DATE TYPING EFFECT
-    // ---------------------
-    let datetxt = "20th December";
-    let charArrDate = datetxt.split('');
-    let currentIndex = 0;
-    let dateSpan = document.querySelector(".date__of__birth span");
-
-    setTimeout(function () {
-        let timeDatetxt = setInterval(function () {
-            if (currentIndex < charArrDate.length) {
-                dateSpan.textContent += charArrDate[currentIndex];
-                currentIndex++;
-            } else {
-                // add stars once done
-                let i = document.createElement("i");
-                i.className = "fa-solid fa-star";
-                document.querySelector(".date__of__birth").prepend(i);
-                document.querySelector(".date__of__birth").appendChild(i.cloneNode(true));
-                clearInterval(timeDatetxt);
-            }
-        }, 100);
-    }, 12000);
-
-
-    // ---------------------
-    // SMALL LOCK POPUP
-    // ---------------------
-    const btnLetter = document.getElementById("btn__letter");
-    const miniLockPopup = document.getElementById("miniLockPopup");
-    const miniContinue = document.getElementById("miniContinue");
-    const miniExit = document.getElementById("miniExit");
-
-    btnLetter.addEventListener("click", function () {
-        miniLockPopup.style.display = "block";
-    });
-
-    miniExit.addEventListener("click", function () {
-        miniLockPopup.style.display = "none";
-    });
-
-
-    // ---------------------
-    // EXPERIENCE FLOW
-    // ---------------------
-    const experienceOverlay = document.getElementById("experienceOverlay");
-
-    function setExperienceStep(step) {
-        const screens = document.querySelectorAll(".experienceScreen");
-        screens.forEach(s => s.classList.remove("experienceScreen--active"));
-
-        const active = document.querySelector(".experienceScreen--" + step);
-        if (active) {
-            active.classList.add("experienceScreen--active");
-        }
-
-        // show overlay
-        experienceOverlay.classList.add("experienceOverlay--active");
-    }
-
-    // After "Continue" from small popup → open quiz
-    miniContinue.addEventListener("click", function () {
-        miniLockPopup.style.display = "none";
-        setExperienceStep("quiz");
-    });
-
-    // QUIZ SUBMIT
-    const quizForm = document.getElementById("quizForm");
-    quizForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-        // you can add validation / scoring here if you want
-        setExperienceStep("photo");
-    });
-
-    // PHOTO NEXT
-    const photoNextBtn = document.getElementById("photoNextBtn");
-    photoNextBtn.addEventListener("click", function () {
-        setExperienceStep("cake");
-    });
-
-    // CAKE → BLOW CANDLES → FIREWORKS
-    const blowCandlesBtn = document.getElementById("blowCandlesBtn");
-    const cakeScreen = document.querySelector(".experienceScreen--cake");
-
-    blowCandlesBtn.addEventListener("click", function () {
-        cakeScreen.classList.add("cake--blown");
-        // little delay then fireworks
         setTimeout(function () {
-            setExperienceStep("fireworks");
-        }, 1200);
-    });
+            let timeDatetxt = setInterval(function () {
+                if (currentIndex < charArrDate.length) {
+                    dateSpan.textContent += charArrDate[currentIndex];
+                    currentIndex++;
+                } else {
+                    let i = document.createElement("i");
+                    i.className = "fa-solid fa-star";
+                    document.querySelector(".date__of__birth").prepend(i);
+                    document.querySelector(".date__of__birth").appendChild(i.cloneNode(true));
+                    clearInterval(timeDatetxt);
+                }
+            }, 100);
+        }, 12000);
 
-    // UNLOCK SURPRISE → OPEN ORIGINAL LOVE LETTER POPUP
-    const unlockSurpriseBtn = document.getElementById("unlockSurpriseBtn");
-
-    function openLoveLetter() {
-        const boxmail = document.querySelector(".boxMail");
-        if (boxmail) {
-            boxmail.classList.add("active");
+        /***** Audio (optional) *****/
+        function loadAudio(path) {
+            try {
+                const a = new Audio(path);
+                a.volume = 0.65;
+                return a;
+            } catch (e) {
+                return null;
+            }
         }
-    }
+        const audioPop = loadAudio('./audio/pop.mp3');
+        const audioWhoosh = loadAudio('./audio/whoosh.mp3');
+        const audioBlow = loadAudio('./audio/blow.mp3');
+        const audioFireworks = loadAudio('./audio/fireworks.mp3');
 
-    unlockSurpriseBtn.addEventListener("click", function () {
-        experienceOverlay.classList.remove("experienceOverlay--active");
-        openLoveLetter();
-    });
+        /***** Quiz data (your answers) *****/
+        const quizData = [
+            { question: "What is Pavitra’s nickname?", options: ["Chanda", "Babu", "Shona"], correct: "Chanda", bg: "./images/q1-bg.jpg" },
+            { question: "What makes you smile the most?", options: ["Cake", "Messages", "Music"], correct: "Messages", bg: "./images/q2-bg.jpg" },
+            { question: "What is my favorite thing about you?", options: ["Smile", "Hair", "Eyes"], correct: "Smile", bg: "./images/q3-bg.jpg" },
+            { question: "Your dream place?", options: ["Goa", "Manali", "Paris"], correct: "Manali", bg: "./images/q4-bg.jpg" },
+            { question: "What do you love the most?", options: ["Family", "Friends", "Me"], correct: "Family", bg: "./images/q5-bg.jpg" }
+        ];
 
-    // ---------------------
-    // BOXMAIL CLOSE (EXISTING)
-    // ---------------------
-    const boxmail = document.querySelector(".boxMail");
-    const closeIcon = document.querySelector(".boxMail .fa-xmark");
+        // state
+        let currentQuiz = 0;
+        let selectedAnswer = null;
 
-    if (closeIcon && boxmail) {
-        closeIcon.addEventListener("click", function () {
-            boxmail.classList.remove("active");
+        // elements
+        const btnLetter = document.getElementById('btn__letter');
+        const miniLockPopup = document.getElementById('miniLockPopup');
+        const miniContinue = document.getElementById('miniContinue');
+        const miniExit = document.getElementById('miniExit');
+
+        const experienceOverlay = document.getElementById('experienceOverlay');
+
+        const quizScreen = document.querySelector('.experienceScreen--quiz');
+        const quizQuestionEl = document.getElementById('quizQuestion');
+        const quizOptionsEl = document.getElementById('quizOptions');
+        const quizBgEl = document.getElementById('quizBg');
+        const quizNextBtn = document.getElementById('quizNextBtn');
+
+        const goodbyePopup = document.getElementById('goodbyePopup');
+        const goodbyeCloseBtn = document.getElementById('goodbyeCloseBtn');
+
+        const photoIntroNext = document.getElementById('photoIntroNext');
+        const photoNextBtn = document.getElementById('photoNextBtn');
+
+        const blowCandlesBtn = document.getElementById('blowCandlesBtn');
+        const unlockSurpriseBtn = document.getElementById('unlockSurpriseBtn');
+
+        const boxmail = document.querySelector('.boxMail');
+        const boxmailClose = document.querySelector('.boxMail .fa-xmark');
+
+        // helper: show overlay and a certain step
+        function setExperienceStep(step) {
+            // show overlay
+            experienceOverlay.classList.add('experienceOverlay--active');
+
+            // hide all screens
+            document.querySelectorAll('.experienceScreen').forEach(s => {
+                s.style.display = 'none';
+            });
+
+            // show requested
+            const el = document.querySelector('.experienceScreen--' + step);
+            if (el) el.style.display = 'flex';
+
+            // play small pop sound
+            if (audioPop) audioPop.currentTime = 0, audioPop.play();
+        }
+
+        // position mini popup above the button and show
+        function showMiniPopup() {
+            // find button rect relative to viewport
+            const rect = btnLetter.getBoundingClientRect();
+
+            // place miniLockPopup relative to document: put it inside .left so absolute works with that container
+            // we used CSS absolute placed in DOM under .left so it will be above the button naturally
+            miniLockPopup.style.display = 'block';
+            // small whoosh
+            if (audioWhoosh) { audioWhoosh.currentTime = 0; audioWhoosh.play(); }
+        }
+
+        // hide mini popup
+        function hideMiniPopup() {
+            miniLockPopup.style.display = 'none';
+        }
+
+        // initial event: clicking the "Your Love Letter" button
+        btnLetter.addEventListener('click', function () {
+            showMiniPopup();
         });
-    }
 
-    // NOTE: We DISCONNECTED direct .mail click → .boxMail
-    // so love letter only opens after full flow.
-</script>
+        miniExit.addEventListener('click', function () {
+            hideMiniPopup();
+        });
+
+        // Continue → open photo intro first
+        miniContinue.addEventListener('click', function () {
+            hideMiniPopup();
+            setExperienceStep('photoIntro');
+        });
+
+        // PHOTO INTRO → when user presses continue, blur photo into background and open quiz
+        photoIntroNext.addEventListener('click', function () {
+            // set overlay background to blurred photo (option A)
+            const introPhoto = document.getElementById('introPhoto');
+            const photoUrl = introPhoto ? introPhoto.src : null;
+            if (photoUrl) {
+                experienceOverlay.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.85)), url(${photoUrl})`;
+                experienceOverlay.style.backgroundSize = 'cover';
+                experienceOverlay.style.backdropFilter = 'blur(4px)';
+            }
+            // go to quiz
+            setExperienceStep('quiz');
+            loadQuiz();
+            if (audioWhoosh) audioWhoosh.currentTime = 0, audioWhoosh.play();
+        });
+
+        // build quiz screen one-by-one
+        function loadQuiz() {
+            const q = quizData[currentQuiz];
+            if (!q) return;
+            // background for quiz (blurred)
+            quizBgEl.style.backgroundImage = `url('${q.bg}')`;
+            // set question
+            quizQuestionEl.textContent = q.question;
+
+            // clear options
+            quizOptionsEl.innerHTML = '';
+            quizNextBtn.style.display = 'none';
+            selectedAnswer = null;
+
+            // add options (radio)
+            q.options.forEach(opt => {
+                const label = document.createElement('label');
+                label.innerHTML = `<input type="radio" name="quizOpt" value="${opt}"> ${opt}`;
+                quizOptionsEl.appendChild(label);
+            });
+
+            // attach events
+            quizOptionsEl.querySelectorAll('input').forEach(input => {
+                input.addEventListener('change', function () {
+                    selectedAnswer = this.value;
+                    quizNextBtn.style.display = 'block';
+                    // soft select pop
+                    if (audioPop) audioPop.currentTime = 0, audioPop.play();
+                });
+            });
+        }
+
+        // Next button (checks correctness)
+        quizNextBtn.addEventListener('click', function () {
+            const correct = quizData[currentQuiz].correct;
+            if (selectedAnswer !== correct) {
+                // wrong → goodbye popup
+                goodbyePopup.style.display = 'flex';
+                if (audioPop) audioPop.currentTime = 0, audioPop.play();
+                return;
+            }
+
+            // correct → move on
+            currentQuiz++;
+            if (currentQuiz >= quizData.length) {
+                // finished quiz → show photo surprise
+                setExperienceStep('photo');
+                if (audioWhoosh) audioWhoosh.currentTime = 0, audioWhoosh.play();
+            } else {
+                loadQuiz();
+            }
+        });
+
+        // close goodbye
+        goodbyeCloseBtn.addEventListener('click', function () {
+            goodbyePopup.style.display = 'none';
+            // hide entire overlay and stop
+            experienceOverlay.classList.remove('experienceOverlay--active');
+            // reset quiz state
+            currentQuiz = 0;
+        });
+
+        // after photo surprise next
+        photoNextBtn.addEventListener('click', function () {
+            setExperienceStep('cake');
+            if (audioWhoosh) audioWhoosh.currentTime = 0, audioWhoosh.play();
+        });
+
+        // blow candles → show fireworks
+        blowCandlesBtn.addEventListener('click', function () {
+            // animate candle blow: hide flames (CSS toggles)
+            document.querySelector('.experienceScreen--cake .experienceCard').classList.add('cake--blown');
+            if (audioBlow) { audioBlow.currentTime = 0; audioBlow.play(); }
+            setTimeout(function () {
+                setExperienceStep('fireworks');
+                if (audioFireworks) { audioFireworks.currentTime = 0; audioFireworks.play(); }
+            }, 900);
+        });
+
+        // unlock surprise → open original full-screen love-letter boxMail
+        unlockSurpriseBtn.addEventListener('click', function () {
+            experienceOverlay.classList.remove('experienceOverlay--active');
+            // open .boxMail like original
+            if (boxmail) boxmail.classList.add('active');
+        });
+
+        // boxMail close existing
+        if (boxmailClose && boxmail) {
+            boxmailClose.addEventListener('click', function () {
+                boxmail.classList.remove('active');
+            });
+        }
+
+        // ensure overlay hides on start
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.experienceScreen').forEach(s => s.style.display = 'none');
+            miniLockPopup.style.display = 'none';
+            goodbyePopup.style.display = 'none';
+        });
+    </script>
+</body>
 
 </html>
